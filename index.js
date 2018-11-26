@@ -9,6 +9,8 @@ server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(express.static(__dirname + '/public'))
 
+let userRoutes = require('./server/auth/routes')
+server.use('/account', userRoutes)
 //^^ above always the same
 
 let productRoutes = require('./server/routes/products')
